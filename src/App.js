@@ -1,6 +1,10 @@
 import React from 'react';
+import Grid from './components/Grid';
 
 function App() {
+
+  // const onClickHandler = (rowIndex, columnIndex)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      {/* <Grid rows={10} columns={10} onClick={onClickHandler} /> */}
     </div>
   );
 }
