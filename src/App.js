@@ -11,6 +11,15 @@ const generateEmptyGrid = (numRows, numColumns) => {
   return rows;
 };
 
+const generateRandomGrid = (numRows, numColumns) => {
+  const rows = [];
+  for (let i = 0; i < numRows; i += 1) {
+    rows.push(Array.from(Array(numColumns), () => (Math.random() > 0.6 ? 1 : 0)));
+  }
+
+  return rows;
+};
+
 const countCellNeighbors = (grid, i, j) => {
   const numRows = grid.length;
   const numColumns = numRows ? grid[0].length : 0;
@@ -76,8 +85,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <button onClick={onStartGameHandler}>{running ? 'stop' : 'start'}</button>
+    <div>
+      <div style={{ padding: '12px' }}>
+        <button onClick={onStartGameHandler}>{`${running ? 'Stop' : 'Start'} game`}</button>
+        <button style={{ margin: '0 12px' }} onClick={() => {
+          setRunning(false);
+          setGrid(generateEmptyGrid(NUM_ROWS, NUM_COLUMNS));
+        }}>Clear grid</button>
+        <button onClick={() => setGrid(generateRandomGrid(NUM_ROWS, NUM_COLUMNS))}>Generate random grid</button>
+      </div>
       <Grid grid={grid} onClick={onClickCellHandler} />
     </div>
   );
