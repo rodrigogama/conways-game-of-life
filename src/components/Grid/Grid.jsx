@@ -1,22 +1,13 @@
 import React from 'react';
 import { GridContainer, GridCell } from './styles';
 
-const generateGrid = (rows, columns) => {
-  const grid = [];
-  for (let i = 0; i < rows; i += 1) {
-    grid.push(Array(columns).fill(0));
-  }
-  return grid;
-};
-
-const Grid = ({ rows, columns, onClick }) => {
-  const grid = generateGrid(rows, columns);
-
+const Grid = ({ grid, onClick }) => {
   return (
-    <GridContainer numRows={rows} numColumns={columns}>
+    <GridContainer numColumns={grid.length}>
       {grid.map((rows, rowIndex) => (
         rows.map((column, columnIndex) => (
           <GridCell
+            isAlive={column} // column value: 1 or 0
             key={`${rowIndex}_${columnIndex}`}
             onClick={() => onClick(rowIndex, columnIndex)}
           />
