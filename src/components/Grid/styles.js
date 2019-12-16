@@ -4,6 +4,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-gap: 2px;
   grid-template-columns: ${({ numColumns }) => (`repeat(${numColumns}, 20px)`)};
+  padding: 0 12px 12px;
 `;
 
 export const GridCell = styled.div`

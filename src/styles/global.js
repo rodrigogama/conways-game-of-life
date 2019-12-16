@@ -65,20 +65,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    text-align: inherit;
-    outline: none;
-    line-height: inherit;
-    -webkit-appearance: none;
-  }
   /* Fix antialiasing */
   *, *:before, *:after {
     -webkit-font-smoothing: antialiased;
